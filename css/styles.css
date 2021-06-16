@@ -72,6 +72,11 @@ address {
   text-decoration: none;
 }
 
+.button {
+  background-color: transparent;
+  border: none;
+}
+
 /*+++++++++++++ ENG GLOBAL +++++++++++++*/
 
 /*========== COMPONENTS ==========*/
@@ -192,6 +197,10 @@ address {
   align-items: center;
 }
 
+.menu-item {
+  position: relative;
+}
+
 .menu-link:hover,
 .menu-link:focus,
 .menu-link:active,
@@ -199,6 +208,17 @@ address {
 .menu-contact:hover,
 .menu-contact:focus {
   color: var(--focus-colour);
+}
+
+.current-link::after {
+  content: "";
+  background-color: var(--focus-colour);
+  height: 4px;
+  display: flex;
+  border-radius: 2px;
+  position: absolute;
+  bottom: -10px;
+  left: 0px;
 }
 
 .menu-contact-item:last-child {
@@ -661,3 +681,58 @@ address {
 
 /*end overlay*/
 /*========== END PORTFOLIO LIST ==========*/
+
+/*========== MODAL WINDOW ==========*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+.modal {
+  position: absolute;
+  width: 528px;
+  height: 581px;
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  transition: scale 500ms var(--anim-t);
+}
+.modal-close-svg {
+  width: 14px;
+  height: 14px;
+  fill: #000000;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  padding: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/*========== END MODAL WINDOW ==========*/
