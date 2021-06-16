@@ -24,6 +24,8 @@
   --flex-x6: calc((100% - 180px) / 6);
   --portfolio-list-item-padding: 20px;
   --menu-interval: 50px;
+  --anim-d: 250ms;
+  --anim-t: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*+++++++++++++ GLOBAL +++++++++++++*/
@@ -107,6 +109,7 @@ address {
 .social-list-icon {
   height: 20px;
   width: 20px;
+  transition: fill var(--anim-d) var(--anim-t);
 }
 
 .social-list-item-link {
@@ -117,6 +120,7 @@ address {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color var(--anim-d) var(--anim-t);
 }
 
 .social-list-item-link:hover,
@@ -130,6 +134,7 @@ address {
 }
 
 /*END SOCIAL*/
+
 /*========== END COMPONENTS ==========*/
 
 /*========== LOGO ==========*/
@@ -179,6 +184,7 @@ address {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--main-colour);
+  transition: color var(--anim-d) var(--anim-t);
 }
 
 .navigation-contact {
@@ -210,6 +216,7 @@ address {
   display: flex;
   align-items: center;
   /*border: 1px solid red;*/
+  transition: fill var(--anim-d) var(--anim-t);
 }
 
 .menu-contact {
@@ -272,17 +279,17 @@ address {
   margin-bottom: 20px;
 }
 
-.footer-container > .footer-container-box:nth-child(1) {
+.footer-container > .footer-container-box:first-child {
   margin-right: 70px;
   padding-top: var(--padding-footer-top-bottom);
   padding-bottom: var(--padding-footer-top-bottom);
-  /* border: 2px solid black;*/
+  border: 2px solid black;
 }
 
-.footer-container > .footer-container-box:nth-child(2) {
+.footer-container > .footer-container-box:last-child {
   margin-right: 70px;
   padding-top: 72px;
-  /* border: 2px solid white;*/
+  border: 2px solid white;
 }
 
 /*SOCIAL*/
@@ -305,7 +312,10 @@ address {
   background-color: var(--background-colour);
   padding-top: 200px;
   padding-bottom: 200px;
-  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
     url(../images/hero/bg.jpg);
   background-size: cover, 1600px;
   background-repeat: no-repeat;
@@ -343,6 +353,7 @@ address {
   border-radius: 4px;
   padding: 10px 32px;
   border: 0px;
+  transition: background-color var(--anim-d) var(--anim-t);
 }
 
 .hero-button:hover,
@@ -489,6 +500,7 @@ address {
   padding-bottom: 16px;
   padding-left: 32px;
   padding-right: 32px;
+  transition: border var(--anim-d) var(--anim-t);
 }
 
 .clients-list {
@@ -499,6 +511,7 @@ address {
   height: 60px;
   width: 106px;
   fill: var(--tripple-colour);
+  transition: fill var(--anim-d) var(--anim-t);
 }
 
 .clients-list-link:hover,
@@ -540,6 +553,10 @@ address {
   padding-bottom: var(--portfolio-button-vertical-padding);
   /* border: 2px solid black;*/
   border: none;
+
+  transition: color var(--anim-d) var(--anim-t),
+    background-color var(--anim-d) var(--anim-t),
+    box-shadow var(--anim-d) var(--anim-t);
 }
 
 .portfolio-button-list {
@@ -570,6 +587,7 @@ address {
   line-height: 2;
   letter-spacing: 0.06em;
   margin-bottom: 4px;
+  color: var(--main-colour);
 }
 
 .portfolio-list-item-text {
@@ -579,7 +597,9 @@ address {
 }
 
 .portfolio-list-item {
-  background: #ffffff;
+  background: var(--dark-text-colour);
+  transition: color var(--anim-d) var(--anim-t),
+    box-shadow var(--anim-d) var(--anim-t);
 }
 
 .portfolio-list-item:hover,
@@ -587,7 +607,6 @@ address {
   box-sizing: border-box;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  cursor: pointer;
 }
 
 .portfolio-list-item {
@@ -607,4 +626,38 @@ address {
   padding: var(--portfolio-list-item-padding);
 }
 
+/*overlay*/
+.overlay-portfolio {
+  background-color: rgba(33, 150, 243, 0.9);
+  padding-top: 63px;
+  padding-bottom: 63px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--dark-text-colour);
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  overflow: auto;
+  transform: translateY(100%);
+  transition: transform var(--anim-d) var(--anim-t);
+}
+
+.portfolio-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-list-item-link:hover .overlay-portfolio,
+.portfolio-list-item-link:focus .overlay-portfolio {
+  transform: translateY(0%);
+}
+
+/*end overlay*/
 /*========== END PORTFOLIO LIST ==========*/
