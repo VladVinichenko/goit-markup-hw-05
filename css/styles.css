@@ -279,17 +279,17 @@ address {
   margin-bottom: 20px;
 }
 
-.footer-container > .footer-container-box:first-child {
+.footer-container > .footer-container-box1 {
   margin-right: 70px;
   padding-top: var(--padding-footer-top-bottom);
   padding-bottom: var(--padding-footer-top-bottom);
-  border: 2px solid black;
+  /*border: 2px solid black;*/
 }
 
-.footer-container > .footer-container-box:last-child {
+.footer-container > .footer-container-box2 {
   margin-right: 70px;
   padding-top: 72px;
-  border: 2px solid white;
+  /*border: 2px solid white;*/
 }
 
 /*SOCIAL*/
