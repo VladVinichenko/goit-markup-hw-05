@@ -169,12 +169,12 @@ address {
 /*========== HEADER ==========*/
 .header {
   border-bottom: 1px solid #ececec;
-  padding-top: 24px;
-  padding-bottom: 25px;
 }
 
 .header-logo {
   margin-right: 93px;
+  padding-top: 24px;
+  padding-bottom: 25px;
 }
 
 .header-logo,
@@ -210,15 +210,30 @@ address {
   color: var(--focus-colour);
 }
 
-.current-link::after {
+.menu-link:hover:after,
+.menu-link:focus:after {
+  opacity: 1;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.current-link.menu-link::after {
+  opacity: 1;
+}
+
+.menu-link::after {
   content: "";
-  background-color: var(--focus-colour);
-  height: 4px;
-  display: flex;
-  border-radius: 2px;
   position: absolute;
-  bottom: -10px;
-  left: 0px;
+  background-color: var(--focus-colour);
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  bottom: -32px;
+  left: 0;
+  opacity: 0;
+  transition: opacity var(--anim-d) var(--anim-t);
 }
 
 .menu-contact-item:last-child {
@@ -262,6 +277,9 @@ address {
 /*========== FOOTER ==========*/
 .footer {
   background-color: var(--background-colour);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  /*padding-left: 215px;*/
 }
 
 .address-footer {
@@ -299,17 +317,13 @@ address {
   margin-bottom: 20px;
 }
 
-.footer-container > .footer-container-box1 {
-  margin-right: 70px;
-  padding-top: var(--padding-footer-top-bottom);
-  padding-bottom: var(--padding-footer-top-bottom);
-  /*border: 2px solid black;*/
+.footer-container {
+  display: flex;
+  align-items: center;
 }
 
-.footer-container > .footer-container-box2 {
+.footer-container-box {
   margin-right: 70px;
-  padding-top: 72px;
-  /*border: 2px solid white;*/
 }
 
 /*SOCIAL*/
@@ -339,7 +353,7 @@ address {
     url(../images/hero/bg.jpg);
   background-size: cover, 1600px;
   background-repeat: no-repeat;
-  background-position-x: center;
+  background-position: center;
 }
 
 .hero-title,
@@ -392,11 +406,8 @@ address {
 /*========== FEATURES ==========*/
 
 .features-svg {
-  height: 120px;
-  width: 270px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: var(--primary-margin);
+  height: 70px;
+  width: 70px;
 }
 
 .features-text {
@@ -413,6 +424,22 @@ address {
 .features-list {
   margin-left: var(--primary-margin-reverse);
   margin-top: var(--primary-margin-reverse);
+}
+
+.features-block-svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 100px;
+  padding-right: 100px;
+
+  background-color: var(--button-background-colour);
+  border-radius: 4px;
+
+  margin-bottom: var(--primary-margin);
 }
 
 /*.features-list > .features-block:not(:last-child) {
@@ -493,6 +520,38 @@ address {
 .command-title {
   padding: 30px;
 }
+
+/*overlay text*/
+.about-list-img {
+  position: relative;
+}
+
+.about-overlay-text {
+  font-size: var(--primary-font-size);
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: var(--dark-text-colour);
+}
+
+.about-overlay {
+  background-color: rgba(47, 48, 58, 0.8);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  width: 100%;
+  /*transform: translateY(100%);*/
+}
+
+/*end overlay text*/
+
 /*SOCIAL*/
 .social-list-command {
   justify-content: space-between;
@@ -623,8 +682,8 @@ address {
     box-shadow var(--anim-d) var(--anim-t);
 }
 
-.portfolio-list-item-link:hover,
-.portfolio-list-item-link:focus {
+.portfolio-list-item-link:hover .portfolio-list-box,
+.portfolio-list-item-link:focus .portfolio-list-box {
   box-sizing: border-box;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -647,6 +706,11 @@ address {
   padding: var(--portfolio-list-item-padding);
 }
 
+/*
+.portfolio-list-item-link:hover .overlay-portfolio,
+.portfolio-list-item-link:focus .overlay-portfolio {
+  transform: translateY(0%);
+*/
 /*overlay*/
 .overlay-portfolio {
   background-color: rgba(33, 150, 243, 0.9);
@@ -692,6 +756,9 @@ address {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 100;
+
+  opacity: 1;
+  transition: opacity var(--anim-d) var(--anim-t);
 }
 
 .modal {
@@ -705,16 +772,21 @@ address {
 
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
 
-  transition: scale 500ms var(--anim-t);
+  transition: transform var(--anim-d) var(--anim-t);
 }
+
 .modal-close-svg {
   width: 14px;
   height: 14px;
   fill: #000000;
 }
-
+/*
+.modal-close-svg:hover {
+  fill: var(--focus-colour);
+}
+*/
 .modal-close-btn {
   position: absolute;
   top: 8px;
@@ -728,12 +800,44 @@ address {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
-
+/*
 .is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
+*/
+.backdrop.is-hidden {
+  opacity: 0;
+  /*visibility: hidden;*/
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+/*
+.hero-title {
+  animation-duration: 2250ms;
+  transition-timing-function: var(--anim-t);
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+  animation-play-state: paused;
+}
+
+.hero:hover .hero-title {
+  animation-play-state: running;
+  animation-fill-mode: none;
+  animation-iteration-count: 1;
+}
+
+.modal-close-btn:active .modal {
+  animation-play-state: running;
+  animation-play-state: paused;
+}
+*/
 
 /*========== END MODAL WINDOW ==========*/

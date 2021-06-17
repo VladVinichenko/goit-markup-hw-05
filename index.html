@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.css"
         integrity="sha512-Y0MM+V6ymRKN2zStTqzQ227DWhhp4Mzdo6gnlRnuaNCbc+YN/ZH0sBCLTM4M0oSy9c9VKiCvd4Jk44aCLrNS5Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    
+        <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 <!--HEADER-->
@@ -36,14 +38,14 @@
             <ul class="navigation-contact list flex">
                 <li class="menu-contact-item link">
                     <a href="mailto:info@devstudio.com" class="menu-contact link">
-                    <svg class="contact-header-svg mail-svg">
+                    <svg width="16" height="12" class="contact-header-svg mail-svg">
                         <use href="./images/sprite.svg#icon-envelope"></use>
                     </svg>
                         info@devstudio.com</a>
                 </li>
                 <li class="menu-contact-item link">
                     <a href="tel:+380961111111" class="menu-contact link">
-                    <svg class="contact-header-svg tel-svg">
+                    <svg width="10" height="12" class="contact-header-svg tel-svg">
                         <use href="./images/sprite.svg#icon-smartphone"></use>
                     </svg>
                         +38 096 111 11 11</a>
@@ -57,7 +59,7 @@
 <!--HERO-->
         <section class=hero>
             <div class="container">
-            <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
+            <h1 class="hero-title animate__fadeInUp">Эффективные решения для вашего бизнеса</h1>
             <button type="button" data-modal-open class="hero-button">Заказать услугу</button>
             </div>
 
@@ -69,37 +71,49 @@
                 <h2 hidden class="features-text">Особенности</h2>
                 <ul class="features-list list flex wrap">
                     <li class="features-block">
-                        <svg class="features-svg">
-                            <use href="./images/sprite.svg#icon-antenna"></use>
-                        </svg>
+                        <div class="features-block-svg">
+                            <svg class="features-svg">
+                                <use href="./images/sprite.svg#icon-antenna"></use>
+                            </svg>
+                        </div>
                         <h3 class="features-title">Внимание к деталям</h3>
-                        <p class="features-text">Идейные соображения, а также начало повседневной работы по формированию позиции.</p>
+                        <p class="features-text">Идейные соображения, а также начало повседневной работы по формированию
+                            позиции.</p>
                     </li>
                     <li class="features-block">
-                        <svg class="features-svg">
-                            <use href="./images/sprite.svg#icon-clock"></use>
-                        </svg>
+                        <div class="features-block-svg">
+                            <svg class="features-svg">
+                                <use href="./images/sprite.svg#icon-clock"></use>
+                            </svg>
+                        </div>
                         <h3 class="features-title">Пунктуальность</h3>
-                        <p class="features-text">Задача организации, в особенности же рамки и место обучения кадров влечет за собой.</p>
+                        <p class="features-text">Задача организации, в особенности же рамки и место обучения кадров влечет за
+                            собой.</p>
                     </li>
                     <li class="features-block">
-                        <svg class="features-svg">
-                            <use href="./images/sprite.svg#icon-diagram"></use>
-                        </svg>
+                        <div class="features-block-svg">
+                            <svg class="features-svg">
+                                <use href="./images/sprite.svg#icon-diagram"></use>
+                            </svg>
+                        </div>
                         <h3 class="features-title">Планирование</h3>
-                        <p class="features-text">Равным образом консультация с широким активом в значительной степени обуславливает.</p>
+                        <p class="features-text">Равным образом консультация с широким активом в значительной степени
+                            обуславливает.</p>
                     </li>
                     <li class="features-block">
-                        <svg class="features-svg">
-                            <use href="./images/sprite.svg#icon-astronaut"></use>
-                        </svg>
+                        <div class="features-block-svg">
+                            <svg class="features-svg">
+                                <use href="./images/sprite.svg#icon-astronaut"></use>
+                            </svg>
+                        </div>
                         <h3 class="features-title">Современные технологии</h3>
-                        <p class="features-text">Значимость этих проблем настолько очевидна, что реализация плановых заданий.</p>
+                        <p class="features-text">Значимость этих проблем настолько очевидна, что реализация плановых заданий.
+                        </p>
                     </li>
                 </ul>
             </div>
-
-
+        
+        
         </section>
 
 <!--ABOUT-->
@@ -109,12 +123,28 @@
             <ul class="about-list list flex wrap">
                 <li class="about-list-img">
                     <img src="images/about/img_1.jpg" alt="разработка кода" width="370" height="294">
+                    <div class="about-overlay">
+<h3 class="about-overlay-text">
+    Десктопные приложения
+</h3>
+                    </div>
+
                 </li>
                 <li class="about-list-img">
                     <img src="images/about/img_2.jpg" alt="разработка дизайна" width="370" height="294">
+                                    <div class="about-overlay">
+                                        <h3 class="about-overlay-text">
+                                            Мобильные приложения
+                                        </h3>
+                                    </div>
                 </li>
                 <li class="about-list-img">
                     <img src="images/about/img_3.jpg" alt="выбор цвета" width="370" height="294">
+                                    <div class="about-overlay">
+                                        <h3 class="about-overlay-text">
+                                            Дизайнерские решения
+                                        </h3>
+                                    </div>
                 </li>
             </ul>
             </div>
@@ -372,80 +402,79 @@
 
 <!--FOOTER-->
 <footer class="footer">
-    <div class="container">
-        <ul class="footer-container list flex">
-            <li class="footer-container-box1">
-                <a href="./index.html" lang="en" class="logo"><span class="logo-blue">Web</span><span
-                        class="logo-white">Studio</span></a>
-                <address class="address-footer">
-                    <ul class="address-footer-list list flex">
-                        <li class="address-footer-list-title">
-                            <a href="https://goo.gl/maps/bDPtSfCHScpDjVdq6" target="_blank" rel="noopener nooferrer"
-                                class="address-footer-list-title-link-map link">г. Киев, пр-т Леси Украинки, 26</a>
-                        </li>
-                        <li class="address-footer-list-title">
-                            <a href="mailto:info@example.com"
-                                class="address-footer-list-title-link link">info@example.com</a>
-                        </li>
-                        <li class="address-footer-list-title">
-                            <a href="tel:+380991111111" class="address-footer-list-title-link link">+38 099 111 11
-                                11</a>
-                        </li>
-                    </ul>
-                </address>
-            </li>
+    <div class="container footer-container">
 
-            <li class="footer-container-box2">
-                <h3 class=footer-text-social>Присоединяйтесь</h3>
-                <ul class="social-list-footer list flex">
-                    <li class="social-list-item">
-                        <a href="" class="social-list-item-link social-list-item-link-footer link">
-
-                            <svg class="social-list-icon social-list-icon-footer">
-                                <use href="./images/sprite.svg#icon-instagram"></use>
-                            </svg>
-
-                        </a>
+        <div class="footer-container-box">
+            <a href="./index.html" lang="en" class="logo"><span class="logo-blue">Web</span><span
+                    class="logo-white">Studio</span></a>
+            <address class="address-footer">
+                <ul class="address-footer-list list flex">
+                    <li class="address-footer-list-title">
+                        <a href="https://goo.gl/maps/bDPtSfCHScpDjVdq6" target="_blank" rel="noopener nooferrer"
+                            class="address-footer-list-title-link-map link">г. Киев, пр-т Леси Украинки, 26</a>
                     </li>
-                    <li class="social-list-item">
-                        <a href="" class="social-list-item-link social-list-item-link-footer link">
-
-                            <svg class="social-list-icon social-list-icon-footer">
-                                <use href="./images/sprite.svg#icon-twitter"></use>
-                            </svg>
-
-                        </a>
+                    <li class="address-footer-list-title">
+                        <a href="mailto:info@example.com"
+                            class="address-footer-list-title-link link">info@example.com</a>
                     </li>
-                    <li class="social-list-item">
-                        <a href="" class="social-list-item-link social-list-item-link-footer link">
-
-                            <svg class="social-list-icon social-list-icon-footer">
-                                <use href="./images/sprite.svg#icon-facebook"></use>
-                            </svg>
-
-                        </a>
-                    </li>
-                    <li class="social-list-item">
-                        <a href="" class="social-list-item-link social-list-item-link-footer link">
-
-                            <svg class="social-list-icon social-list-icon-footer">
-                                <use href="./images/sprite.svg#icon-linkedin"></use>
-                            </svg>
-
-                        </a>
+                    <li class="address-footer-list-title">
+                        <a href="tel:+380991111111" class="address-footer-list-title-link link">+38 099 111 11 11</a>
                     </li>
                 </ul>
-            </li>
-        </ul>
-    </div>
+            </address>
+        </div>
 
+
+        <div class="footer-container-box-social">
+            <h3 class=footer-text-social>Присоединяйтесь</h3>
+            <ul class="social-list-footer list flex">
+                <li class="social-list-item">
+                    <a href="" class="social-list-item-link social-list-item-link-footer link">
+
+                        <svg class="social-list-icon social-list-icon-footer">
+                            <use href="./images/sprite.svg#icon-instagram"></use>
+                        </svg>
+
+                    </a>
+                </li>
+                <li class="social-list-item">
+                    <a href="" class="social-list-item-link social-list-item-link-footer link">
+
+                        <svg class="social-list-icon social-list-icon-footer">
+                            <use href="./images/sprite.svg#icon-twitter"></use>
+                        </svg>
+
+                    </a>
+                </li>
+                <li class="social-list-item">
+                    <a href="" class="social-list-item-link social-list-item-link-footer link">
+
+                        <svg class="social-list-icon social-list-icon-footer">
+                            <use href="./images/sprite.svg#icon-facebook"></use>
+                        </svg>
+
+                    </a>
+                </li>
+                <li class="social-list-item">
+                    <a href="" class="social-list-item-link social-list-item-link-footer link">
+
+                        <svg class="social-list-icon social-list-icon-footer">
+                            <use href="./images/sprite.svg#icon-linkedin"></use>
+                        </svg>
+
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
 </footer>
 
 <div class="backdrop is-hidden" data-modal>
 <div class="modal">
     <button type="button" data-modal-close class="modal-close-btn button">
        <svg class="modal-close-svg">
-            <use href="./images.sprite.svg#icon-close-modal"></use>
+            <use href="./images/sprite.svg#icon-close_modal"></use>
         </svg>
     </button>
 </div>
