@@ -617,6 +617,7 @@ address {
 .clients-list {
   margin-left: var(--primary-margin-reverse);
   margin-top: var(--primary-margin-reverse);
+  align-items: center;
 }
 
 /*========== END CLIENTS ==========*/
