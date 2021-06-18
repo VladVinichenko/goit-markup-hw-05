@@ -253,6 +253,7 @@ address {
   display: flex;
   align-items: center;
   /*border: 1px solid red;*/
+  transition: fill var(--anim-d) var(--anim-t);
 }
 
 .menu-contact {
